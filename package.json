@@ -47,6 +47,6 @@
     "setupTestFrameworkScriptFile": "<rootDir>/config/setup.js"
   },
   "peerDependencies": {
-    "graphql": "^0.6.0"
+    "graphql": "^0.4.9"
   }
 }
