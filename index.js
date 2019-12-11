@@ -24,7 +24,7 @@ var BookshelfType = (function () {
   _createClass(BookshelfType, [{
     key: "belongsTo",
     value: function belongsTo(options) {
-      options.resolve = function (modelInstance, params, info) {
+      options.resolve = function (modelInstance, params, context, info) {
         return modelInstance.related(info.fieldName).fetch();
       };
       return options;
@@ -35,10 +35,10 @@ var BookshelfType = (function () {
       var _this = this;
 
       var passBuilder = options.resolve;
-      options.resolve = function (modelInstance, params, info) {
+      options.resolve = function (modelInstance, params, context, info) {
         var passFn = undefined;
         if (passBuilder) passFn = function (qb) {
-          passBuilder(qb, modelInstance, params, info);
+          passBuilder(qb, modelInstance, params, context, info);
         };
         var fieldName = info.fieldName;
         var loadOptions = {};
@@ -52,7 +52,7 @@ var BookshelfType = (function () {
   }, {
     key: "attr",
     value: function attr(options) {
-      options.resolve = function (modelInstance, params, info) {
+      options.resolve = function (modelInstance, params, context, info) {
         return modelInstance.get(info.fieldName);
       };
       return options;
