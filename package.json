@@ -45,8 +45,5 @@
     "testDirectoryName": "specs",
     "setupEnvScriptFile": "<rootDir>/config/env.js",
     "setupTestFrameworkScriptFile": "<rootDir>/config/setup.js"
-  },
-  "peerDependencies": {
-    "graphql": "^0.4.9"
   }
 }
