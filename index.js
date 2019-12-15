@@ -38,7 +38,7 @@ var BookshelfType = (function () {
       options.resolve = function (modelInstance, params, info) {
         var passFn = undefined;
         if (passBuilder) passFn = function (qb) {
-          passBuilder(qb, modelInstance, params, info);
+          passBuilder(qb, modelInstance, params, context, info);
         };
         var fieldName = info.fieldName;
         var loadOptions = {};
@@ -80,4 +80,3 @@ function BookshelfWrapper(config) {
 
 BookshelfWrapper.collection = BookshelfType.collection;
 module.exports = exports["default"];
-
